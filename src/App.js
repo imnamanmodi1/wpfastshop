@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 import './App.css';
 import './App.scss';
 
+
 import Products from './components/Products'
+import Categories from './components/Categories'
 
 let setHeaders = {
   params: {},
-
+  url: 'https://jalaramsweets.com',
   crossdomain: true,
   auth: {
     username: "ck_a0afdc3bc2e3a744907029b229226b053473a6a2",
@@ -19,8 +21,8 @@ const App = () => {
   console.log(defaultHeaders);
   return (
     <div className="App">
+      <Categories headers={defaultHeaders} />
       <Products headers={defaultHeaders}/>
-      
     </div>
   );
 }

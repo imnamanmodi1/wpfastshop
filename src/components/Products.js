@@ -26,8 +26,9 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    //get all products
-    this.state.defaultHeaders.params = {
+    // get all products 
+    let defaultHeaders = this.state.defaultHeaders
+    defaultHeaders.params = {
       per_page: 20,
       orderby: 'date',
       status: 'publish'
@@ -49,7 +50,7 @@ class Products extends Component {
     let productsData = this.state.productsData;
     return (
       <div>
-        { this.state.dataUpdated ?
+        {this.state.dataUpdated ?
           productsData.map((product, index) =>
             //image : {product.images[0].src}
             //weight: {product.weight}
@@ -69,14 +70,16 @@ class Products extends Component {
                       </p>
                     </div>
                     <nav className="level is-mobile">
-                      <div className="level-left">
-                        <p className="level-item">
-                          <small>Category: {product.categories[0].name}</small>
-                          <br />
-                          <small>Weight: {product.weight}(in grams)</small>
-                        </p>
+                      <div className="level-right">
                         <p className="level-item price">
-                          <small>JSP: INR{product.price}</small>
+                          <big>JSP: INR{product.price}</big>
+                        </p>
+                        <p className="level-item">
+                          <small>
+                            <strong>Category</strong>:{product.categories[0].name}
+                            <br />
+                            <strong>Weight</strong>:{product.weight}(in grams)
+                          </small>
                         </p>
                       </div>
                     </nav>
@@ -85,7 +88,7 @@ class Products extends Component {
               </div>
             </>
           ) : <Loader />
-          }
+        }
       </div>
     )
   }

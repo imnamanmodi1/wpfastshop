@@ -33,12 +33,14 @@
 } */
 
 .main-wrapper{
-  border: 1px solid grey;
-  max-width: 500px;
-  margin: 10px auto;
-  box-sizing: border-box;
-  padding: 10px;
-  border-radius: 5%;
+  max-width: 90%;
+  margin: 10px auto; 
+}
+
+
+
+.main-center{
+  text-align: center;
 }
 
 .media-wrapper{
